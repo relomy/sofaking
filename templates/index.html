@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+      <div class="container">
+
+      <h2>Fantasy Football Report</h2>
+
+      {% for key, value in response.items() %}
+      <h3>{{ key }}</h3>
+        <ul>
+        {% for v in value %}
+          <li>{{ v }}</li>
+        {% endfor %}
+        </ul>
+       {% endfor %}
+
+      </div>
+      {% for error in errors %}
+        <h4>{{ error }}</h4>
+      {% endfor %}
+    </div>
+
+{% endblock %}
